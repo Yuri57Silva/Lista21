@@ -1,0 +1,426 @@
+QUESTÃO 01 
+import javax.swing.JOptionPane;
+
+public class a1 {
+
+  public static void main(String[] args) {
+    float c, g;
+    
+    String strc, strg;
+    
+    strc = JOptionPane.showInputDialog("Digite o valor total da conta: ");
+    c = Float.parseFloat(strc);
+    strg = JOptionPane.showInputDialog("Digite a porcentagem de gorjeta que deseja deixar (pro exemplo, 15 para 15%): ");
+    g =  Float.parseFloat(strg);
+    
+    float p = (g / 100)* c;
+    String total = "Valor da gorgeta: R$" + p +". \n";
+    total += "Total a ser pago : R$"+(p + c)+".";
+    
+    JOptionPane.showMessageDialog(null, total);
+    
+  }
+}
+
+QUESTÂO 02
+import javax.swing.JOptionPane;
+
+public class A1 {
+
+	public static void main(String[] args) {
+		
+		float c, f, i;
+		String strc, strf, stri;
+		strc = "";
+		stri = JOptionPane.showInputDialog("Escolha o tipo de conversão:\r\n"
+				+ "1. Celsius para Fahrenheit\r\n"
+				+ "2. Fahrenheit para Celsius ");
+		i = Float.parseFloat(stri);
+		if(i == 1) {
+			strc = JOptionPane.showInputDialog("Digite a temperatura em graus Celsius: ");
+			c = Float.parseFloat(strc);
+			f = (c * 1.8f) + 32;
+			String r = "Resultado em graus Fahrenheit:" + f ;
+			JOptionPane.showMessageDialog(null, r);
+		}else if(i ==2) {
+			strf =  JOptionPane.showInputDialog("Digite a temperatura em graus Celsius: ");
+			f = Float.parseFloat(strf);
+			c = (f - 32) * 1.8f ;
+			String r = "Resultado em graus Celcius:" + c ;
+			JOptionPane.showMessageDialog(null, r);
+		}else {
+			String ERRO = "ERRO! Dados inválidos, responda com 1 ou 2.";
+			JOptionPane.showMessageDialog(null, ERRO);
+		}
+		
+	}
+
+}
+
+QUESTÃO 4
+import javax.swing.JOptionPane;
+
+public class A4 {
+
+	public static void main(String[] args) {
+		float N1, N2, N3, P1, P2, P3, r;
+		
+		String Strn1, strn2, strn3, strp1, strp2, strp3;
+		
+		Strn1 = JOptionPane.showInputDialog(null, "Digite a nota da primeira diciplina: \n");
+		N1 = Float.parseFloat(Strn1);
+		strp1 = JOptionPane.showInputDialog(null, "Digite o peso da primeira diciplina: \n");
+		P1 = Float.parseFloat(strp1);
+		
+		strn2 = JOptionPane.showInputDialog(null, "Digite a nota da Segunda diciplina: \n");
+		N2 = Float.parseFloat(Strn1);
+		strp2 = JOptionPane.showInputDialog(null, "Digite o peso da Segunda diciplina: \n");
+		P2 = Float.parseFloat(strp1);
+		
+		strn3 = JOptionPane.showInputDialog(null, "Digite a nota da Terceira diciplina: \n");
+		N3 = Float.parseFloat(Strn1);
+		strp3 = JOptionPane.showInputDialog(null, "Digite o peso da Terceira diciplina: \n");
+		P3 = Float.parseFloat(strp1);
+		
+		r = (N1 * P1) + (N2 * P2) + (N3 * P3) / (P1 + P2 + P3);
+		
+		String resposta =("A Média ponderada entre as displinas informada é : " + r +"\n");
+		
+		JOptionPane.showMessageDialog(null, resposta);
+	
+	}
+
+}
+
+QUESTÃO 5
+
+import javax.swing.JOptionPane;
+
+public class A5 {
+
+	public static void main(String[] args) {
+		int I, M, D, H, m;
+		String stri;
+		
+		stri = JOptionPane.showInputDialog(null, "Digite a sua idade em anos: \n");
+		I = Integer.valueOf(stri);
+		
+		M = I * 12;
+		
+		D = I * 365;
+		
+		H = D * 24;
+		
+		m = H * 60;
+		
+		String resposta = ("Você já viveu respectivamente : \n" + "Meses: " + M +" \n Em dias: " + D + "\n Em Horas : "+ H +"\n Em minutos:  "+ m );
+		
+		JOptionPane.showMessageDialog(null, resposta);
+		
+
+	}
+
+}
+
+QUESTÃO 6
+
+import javax.swing.JOptionPane;
+
+public class A6 {
+
+	public static void main(String[] args) {
+	float p, a, IMC;
+	
+	String strp, stra;
+	
+	
+	stra = JOptionPane.showInputDialog("Digite sua altura em metros: \n");
+	a = Float.parseFloat(stra);
+	strp = JOptionPane.showInputDialog("Digite seu peso em kg: \n");
+	p = Float.parseFloat(strp);
+	
+	IMC = p / (a * a);
+	
+	if(IMC < 16) {
+		String resposta = ("Seu IMC é: " + IMC + "\n Magreza grave");
+		JOptionPane.showMessageDialog(null, resposta);
+	}else if (IMC > 25) {
+		String resposta = ("Seu IMC é: " + IMC + "\n Sobrepeso");
+		JOptionPane.showMessageDialog(null, resposta);
+	}else {
+		String resposta = ("Seu IMC é: " + IMC + "\n Normal");
+		JOptionPane.showMessageDialog(null, resposta);
+	};
+			
+	
+	
+	}
+
+}
+QUESTÃO 08 
+
+import javax.swing.JOptionPane;
+
+public class A8 {
+
+	public static void main(String[] args) {
+		float n1, n2, r;
+		int op;
+		String str1, str2, stro, resposta;
+		
+		str1 = JOptionPane.showInputDialog("Digite o primeiro número: ");
+		n1 = Float.parseFloat(str1);
+		str2 = JOptionPane.showInputDialog("Digite o segundo número: ");
+		n2 = Float.parseFloat(str2);
+		stro = JOptionPane.showInputDialog("Escolha a operação:\r\n"
+				+ "1. Adição\r\n"
+				+ "2. Subtração\r\n"
+				+ "3. Multiplicação\r\n"
+				+ "4. Divisão");
+		op = Integer.parseInt(stro);
+		
+		switch (op) {
+	     case 1:
+	       r = n1 + n2;
+	       resposta = ("Opção: \n"
+	       		+ op + "Resultado: "+ r);
+	       JOptionPane.showMessageDialog(null, resposta);
+	       break;
+	     case 2:
+	    	 r = n1 - n2;
+		       resposta = ("Opção: \n"
+		       		+ op + "Resultado: "+ r);
+		       JOptionPane.showMessageDialog(null, resposta);
+	       break;
+	     case 3:
+	    	 r = n1 * n2;
+		       resposta = ("Opção: \n"
+		       		+ op + "Resultado: "+ r);
+		       JOptionPane.showMessageDialog(null, resposta);
+	       break;
+	     case 4:
+	    	 r = n1 / n2;
+		       resposta = ("Opção: "
+		       		+ op + "\n Resultado: "+ r);
+		       JOptionPane.showMessageDialog(null, resposta);
+	       break;
+	     default:
+	    	 JOptionPane.showMessageDialog(null, "O número escolhido é inválido! Digite um número entre 1 a 4.");
+	     }
+	}
+
+}
+
+QUESTÃO 09
+
+import javax.swing.JOptionPane;
+
+public class A9 {
+
+	public static void main(String[] args) {
+		float n1, n2, n3, p1, p2, p3, m;
+		
+		String str1, resposta;
+		
+		str1 = JOptionPane.showInputDialog("Digite a nota 1: ");
+		n1 = Float.parseFloat(str1);
+		str1 = JOptionPane.showInputDialog("Digite o peso da nota 1:");
+		p1 = Float.parseFloat(str1);
+		str1 = JOptionPane.showInputDialog("Digite a nota 2: ");
+		n2 = Float.parseFloat(str1);
+		str1 = JOptionPane.showInputDialog("Digite o peso da nota 2:");
+		p2 = Float.parseFloat(str1);
+		str1 = JOptionPane.showInputDialog("Digite a nota 3: ");
+		n3 = Float.parseFloat(str1);
+		str1 = JOptionPane.showInputDialog("Digite o peso da nota 3:");
+		p3 = Float.parseFloat(str1);
+		
+		m = (n1 * p1) + (n2 * p2) + (n3 * p3) / (p1 + p2 + p3);
+		
+		if(m > 90) {
+			resposta = ("A média ponderada é "+ m +", que corresponde à classificação A.");
+		} else if(m < 89 && m > 80) {
+			resposta = ("A média ponderada é "+ m +", que corresponde à classificação B.");
+		}else if(m < 79 && m > 70) {
+			resposta = ("A média ponderada é "+ m +", que corresponde à classificação c.");
+		}else if(m < 69 && m > 60) {
+			resposta = ("A média ponderada é "+ m +", que corresponde à classificação D.");
+		}else {
+			resposta = ("A média ponderada é "+ m +", que corresponde à classificação F.");
+		};
+		
+		JOptionPane.showMessageDialog(null, resposta);
+	}
+
+}
+
+QUESTÃO 10
+
+import javax.swing.JOptionPane;
+
+public class A10 {
+
+	public static void main(String[] args) {
+		int i;
+		String str;
+		
+		str = JOptionPane.showInputDialog("Digite um número inicial:");
+		i = Integer.parseInt(str);
+		
+		while(i > 0) {
+			JOptionPane.showMessageDialog(null, i);
+			i = i - 1;
+		}
+
+	}
+
+}
+
+QUESTÃO 11
+
+
+public class A11 {
+  public static void main(String[] args) {
+    Random rand = new Random();
+    
+    
+    int upperbound = 10;
+    int int_random = rand.nextInt(upperbound);
+    int n, i, r;
+    n = 12;
+    i= 1;
+    String str, resposta;
+    
+       
+    r = int_random;
+    
+   do {
+	   str = JOptionPane.showInputDialog("Adivinhe o número entre 1 e 10.\n"+ "Tentativa" + i +":");
+	   n = Integer.parseInt(str);
+	   if(n < r) {
+		   resposta = ("Tente novamente. O número é maior.\r\n");
+		   JOptionPane.showMessageDialog(null, resposta);
+	   }else if(n > r) {
+		   resposta = ("Tente novamente. O número é menor.\r\n");
+		   JOptionPane.showMessageDialog(null, resposta);
+	   }else if(n == r) {
+		   resposta = ("Parabéns! Você acertou o número " + r + " em " + i + " tentativas.");
+		   JOptionPane.showMessageDialog(null, resposta);
+	   }
+	   i = i +1;
+   } while(n != r);
+    	
+  }
+}
+
+QUESTÃO 12
+
+
+import javax.swing.JOptionPane;
+
+public class A12 {
+	public static void main(String[] args) {
+		int t, b;
+		b= 0;
+		String stam;
+		
+		stam = JOptionPane.showInputDialog("Digite o tamanho dos vetores de inteiros : ");
+		t = Integer.parseInt(stam);
+		int [] v1 = new int[t];
+		int [] v2 = new int[t];
+		
+		JOptionPane.showMessageDialog(null,"Digite os valores do primeiro vetor : ");
+			for(int i = 0; i < t; i++) {
+				b = b+1;
+				String str = JOptionPane.showInputDialog("Posicao " + b + " : ");
+				v1[i] = Integer.parseInt(str);
+			}
+			b=0;
+			JOptionPane.showMessageDialog(null,"Digite os valores do segundo vetor : ");
+			for(int i = 0; i < t; i++) {
+				b = b+1;
+				String str = JOptionPane.showInputDialog("Posicao " + b + " : ");
+				v2[i] = Integer.parseInt(str);
+			}
+		int [] s = new int[t];
+		for(int i = 0; i < t; i++) {
+			s[i] = v1[i] + v2[i];
+		}
+		String resposta = ("Vetor resultante da soma : \n");
+			for(int i = 0; i < t; i++) {
+				resposta = resposta + s[i] + "\n";
+			}
+		JOptionPane.showMessageDialog(null, resposta);
+	}
+}
+
+QUESTÃO 13
+
+
+import javax.swing.JOptionPane;
+
+public class A13 {
+	public static void main(String[] args) {
+		float t;
+		int b;
+		b = 0;
+		
+		String stam;
+		
+		stam = JOptionPane.showInputDialog("Digite o tamanho dos vetores de inteiros : ");
+		t = Float.parseFloat(stam);
+		float [] v1 = new float[(int) t];
+		float [] v2 = new float[(int) t];
+		
+		JOptionPane.showMessageDialog(null,"Digite os valores do primeiro vetor : ");
+			for(int i = 0; i < t; i++) {
+				b = b+1;
+				String str = JOptionPane.showInputDialog("Posicao " + b + " : ");
+				v1[i] = Float.parseFloat(str);
+			}
+			b = 0;
+			JOptionPane.showMessageDialog(null,"Digite os valores do segundo vetor : ");
+			for(int i = 0; i < t; i++) {
+				b = b+1;
+				String str = JOptionPane.showInputDialog("Posicao " + b + " : ");
+				v2[i] = Float.parseFloat(str);
+			}
+		float [] s = new float[(int) t];
+		for(int i = 0; i < t; i++) {
+			s[i] = (float) (v1[i] * v2[i]);
+		}
+		String resposta = ("O produto escalar dos vetores é: \n");
+			for(int i = 0; i < t; i++) {
+				resposta = resposta + s[i] + "\n";
+			}
+		JOptionPane.showMessageDialog(null, resposta);
+	}
+}
+
+QUESTÃO 14
+
+import javax.swing.JOptionPane;
+
+public class A14 {
+
+	public static void main(String[] args) {
+		String p;
+		String c = "";
+		
+		p = JOptionPane.showInputDialog("Digite uma palavra: ");
+		
+		for (int i = (p.length()- 1); i >= 0; i--){
+			c += p.charAt(i);
+		}
+		
+		if(c.toLowerCase().equals(p.toLowerCase())) {
+			String resposta = ("A palavra " + p + " é um palíndromo.");
+			JOptionPane.showMessageDialog(null, resposta);
+		} else {
+			String resposta = ("A palavra " + p + " não é um palíndromo.");
+					JOptionPane.showMessageDialog(null, resposta);
+		}
+
+	}
+
+}
